@@ -116,7 +116,7 @@
                         <x-dialog wire:model="show">
                             <x-dialog.open>
                                 <div class=" lg:flex lg:items-center lg:space-x-6">
-                                    <button type="button"   class="block w-full  rounded-md border border-transparent bg-green-400 py-2 px-4 text-center font-medium text-white shadow hover:bg-green-500" >{{__("Logout")}}</button>
+                                    <button type="button"   class="block w-full  rounded-md border border-transparent bg-green-400 py-2 px-4 text-center font-medium text-white shadow hover:bg-green-500" >{{__("Log out")}}</button>
                                 </div>
                             </x-dialog.open>
 

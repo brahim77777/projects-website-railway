@@ -5,6 +5,6 @@
     </div>
 
     <hr class="w-[100%]">
-    <button wire:click="logout"  class="mt-3 flex w-full items-center justify-center rounded-md border border-transparent bg-green-400  px-5 py-3 text-base font-medium text-white hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 bg-opacity-100 focus:ring-offset-blue-100 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0">{{__("Logout")}}</button>
+    <button wire:click="logout"  class="mt-3 flex w-full items-center justify-center rounded-md border border-transparent bg-green-400  px-5 py-3 text-base font-medium text-white hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 bg-opacity-100 focus:ring-offset-blue-100 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0">{{__("Log out")}}</button>
 
 </div>
