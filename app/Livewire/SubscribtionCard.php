@@ -25,6 +25,7 @@ class SubscribtionCard extends Component
         $this->validate();
         Subscriber::create(["email" => $this->email]);
         $this->done = true;
+        session()->flash('email' , 'email created successfully');
     }
     public function remove()
     {

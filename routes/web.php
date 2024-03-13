@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/", function () {
-    return view("welcome");
-})->name("welcome");
+    return view("home");
+})->name("home");
 
-Route::get("/edit", function () {
-    return view("admin_only");
-})->middleware("auth");
+
+Route::get("/create", function () {
+    return view("create_project");
+})
+    ->name('create_project')
+    ->middleware("auth");
