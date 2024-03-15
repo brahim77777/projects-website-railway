@@ -25,3 +25,8 @@ Route::get("/create", function () {
     ->name('create_project')
     ->middleware("auth");
 
+Route::get("/mail", function () {
+    return view("send_mail");
+})
+    ->name("send_mail")
+    ->middleware("auth");
