@@ -4,95 +4,67 @@
   The alpine.js code is *NOT* production ready and is included to preview
   possible interactivity
 -->
+<div class="bg-warm-gray-50">
+    <div class="mx-auto max-w-md py-24 px-4 sm:max-w-3xl sm:py-32 sm:px-6 lg:max-w-7xl lg:px-8">
+        <ul role="list"
+            class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-2 xl:gap-x-8">
+            <!-- Rest of the code remains the same -->
 
-  <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+            @foreach ($projects as $project)
+                <li class="relative mt-3 ">
+                    <div x-data="{ live_demo: {{ $project->live_demo }}, github_repo: '{{ $project->github_repo }}' }"
+                        class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
 
-      <li class="relative">
-        <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-          <img src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=512&amp;q=80" alt="" class="pointer-events-none object-cover group-hover:opacity-75">
-          <button type="button" class="absolute inset-0 focus:outline-none">
-            <span class="sr-only">View details for IMG_4985.HEIC</span>
-          </button>
-        </div>
-        <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">IMG_4985.HEIC</p>
-        <p class="pointer-events-none block text-sm font-medium text-gray-500">3.9 MB</p>
-      </li>
+                        <img src="{{ asset("/storage/photos/$project->photo") }}" alt="{{ $project->title }}"
+                            class="pointer-events-none object-cover group-hover:opacity-75">
+                        <button type="button"
+                            @click="gotoProject('{{ $project->live_demo }}' , '{{ $project->github_repo }}')"
+                            class="absolute inset-0 focus:outline-none">
+                            <span class="sr-only"></span>
+                        </button>
+                    </div>
 
-      <li class="relative">
-        <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-          <img src="https://images.unsplash.com/photo-1614926857083-7be149266cda?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=512&amp;q=80" alt="" class="pointer-events-none object-cover group-hover:opacity-75">
-          <button type="button" class="absolute inset-0 focus:outline-none">
-            <span class="sr-only">View details for IMG_5214.HEIC</span>
-          </button>
-        </div>
-        <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">IMG_5214.HEIC</p>
-        <p class="pointer-events-none block text-sm font-medium text-gray-500">4 MB</p>
-      </li>
 
-      <li class="relative">
-        <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-          <img src="https://images.unsplash.com/photo-1614705827065-62c3dc488f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=512&amp;q=80" alt="" class="pointer-events-none object-cover group-hover:opacity-75">
-          <button type="button" class="absolute inset-0 focus:outline-none">
-            <span class="sr-only">View details for IMG_3851.HEIC</span>
-          </button>
-        </div>
-        <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">IMG_3851.HEIC</p>
-        <p class="pointer-events-none block text-sm font-medium text-gray-500">3.8 MB</p>
-      </li>
+                </li>
 
-      <li class="relative">
-        <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=512&amp;q=80" alt="" class="pointer-events-none object-cover group-hover:opacity-75">
-          <button type="button" class="absolute inset-0 focus:outline-none">
-            <span class="sr-only">View details for IMG_4278.HEIC</span>
-          </button>
-        </div>
-        <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">IMG_4278.HEIC</p>
-        <p class="pointer-events-none block text-sm font-medium text-gray-500">4.1 MB</p>
-      </li>
+                <div class="relative flex flex-col justify-between">
 
-      <li class="relative">
-        <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-          <img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=512&amp;q=80" alt="" class="pointer-events-none object-cover group-hover:opacity-75">
-          <button type="button" class="absolute inset-0 focus:outline-none">
-            <span class="sr-only">View details for IMG_6842.HEIC</span>
-          </button>
-        </div>
-        <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">IMG_6842.HEIC</p>
-        <p class="pointer-events-none block text-sm font-medium text-gray-500">4 MB</p>
-      </li>
+                    <div class=" mb-[20%]">
+                        <hr class="mt-4">
 
-      <li class="relative">
-        <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-          <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=512&amp;q=80" alt="" class="pointer-events-none object-cover group-hover:opacity-75">
-          <button type="button" class="absolute inset-0 focus:outline-none">
-            <span class="sr-only">View details for IMG_3284.HEIC</span>
-          </button>
-        </div>
-        <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">IMG_3284.HEIC</p>
-        <p class="pointer-events-none block text-sm font-medium text-gray-500">3.9 MB</p>
-      </li>
+                        <h1 class="font-bold text-2xl  text-gray-800">{{ $project->title }} Title</h1>
+                        <p class="text-sm mb-5">{{ $project->type }}</p>
+                        <p class="text-gray-500">{{ $project->description }} Lorem, ipsum dolor sit amet consectetur
+                            adipisicing elit. Explicabo quam aut corporis, repellat odit voluptatum porro nemo,
+                            laboriosam
+                            recusandae corrupti maiores ad velit inventore maxime quos dolorem, neque amet. Hic.
+                        </p>
+                        <p>
+                            <hr class="mt-4">
+                            {{ $project->technologies }}
+                        </p>
+                    </div>
 
-      <li class="relative">
-        <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-          <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=512&amp;q=80" alt="" class="pointer-events-none object-cover group-hover:opacity-75">
-          <button type="button" class="absolute inset-0 focus:outline-none">
-            <span class="sr-only">View details for IMG_4841.HEIC</span>
-          </button>
-        </div>
-        <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">IMG_4841.HEIC</p>
-        <p class="pointer-events-none block text-sm font-medium text-gray-500">3.8 MB</p>
-      </li>
+                    <p class="bottom absolute bottom-0 right-0 text-green-400 ">
+                        @if ($project->live_demo)
+                            <a href="{{ $project->live_demo == '' ? '#' : $project->live_demo }}"
+                                {{ $project->live_demo == '' ? '' : "target = '_blank'" }}
+                                class="px-5 py-2 rounded-md border-2 border-green-400 hover:bg-green-400 hover:text-white transition-all ">{{ __('demo') }}</a>
+                        @endif
+                        @if ($project->github_repo)
+                            <a href="{{ $project->github_repo == '' ? '#' : $project->github_repo }}"
+                                {{ $project->github_repo == '' ? '' : "target = '_blank'" }}
+                                class="px-5 py-2 rounded-md border-2 border-green-400 hover:bg-green-400 hover:text-white transition-all ">{{ __('github') }}</a>
+                        @endif
 
-      <li class="relative">
-        <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-          <img src="https://images.unsplash.com/photo-1492724724894-7464c27d0ceb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=512&amp;q=80" alt="" class="pointer-events-none object-cover group-hover:opacity-75">
-          <button type="button" class="absolute inset-0 focus:outline-none">
-            <span class="sr-only">View details for IMG_5644.HEIC</span>
-          </button>
-        </div>
-        <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">IMG_5644.HEIC</p>
-        <p class="pointer-events-none block text-sm font-medium text-gray-500">4 MB</p>
-      </li>
+                    </p>
 
-  </ul>
+                </div>
+            @endforeach
+
+
+
+
+        </ul>
+    </div>
+</div>

@@ -10,8 +10,27 @@
             </div>
 
 
-            <div class="mt-5 space-y-6 md:col-span-2 md:mt-0">
+            <div class="mt-5 space-y-6 md:col-span-2  md:mt-0">
+                {{-- Title --}}
+
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="title" class="block text-sm font-medium text-gray-700 ">{{ __('Title') }}
+                        <super class="text-red-500">*</super>
+
+                    </label>
+                    <input wire:model="title" type="text" name="title" id="title" autocomplete="given-name"
+                        class="border  p-1 px-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+
+                    @if ($errors->has('title'))
+                        <p class="text-red-500 text-xs italic">{{ $errors->first('title') }}</p>
+                    @endif
+                </div>
+
+
+
+
                 {{-- Live Demo Section --}}
+
 
                 <div class="grid grid-cols-3 gap-6">
                     <div class="col-span-3 sm:col-span-2">
@@ -115,23 +134,9 @@
 
                         <div class="mt-5 md:col-span-2 md:mt-0">
                             <div class="grid grid-cols-6 gap-6">
-                                {{-- Title --}}
 
-                                <div class="col-span-6 sm:col-span-3">
-                                    <label for="title"
-                                        class="block text-sm font-medium text-gray-700 ">{{ __('Title') }}
-                                        <super class="text-red-500">*</super>
 
-                                    </label>
-                                    <input wire:model="title" type="text" name="title" id="title"
-                                        autocomplete="given-name"
-                                        class="border  p-1 px-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-
-                                    @if ($errors->has('title'))
-                                        <p class="text-red-500 text-xs italic">{{ $errors->first('title') }}</p>
-                                    @endif
-                                </div>
-
+                                {{-- Project Type --}}
                                 <div class="col-span-6">
                                     <label for="type"
                                         class="block text-sm font-medium text-gray-700">{{ __('Project type') }}
@@ -149,7 +154,6 @@
                                         <p class="text-red-500 text-xs italic">{{ $errors->first('type') }}</p>
                                     @endif
                                 </div>
-
 
                                 {{-- Technologies --}}
 

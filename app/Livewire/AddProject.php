@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Project;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
@@ -20,39 +21,41 @@ class AddProject extends Component
     #[Validate("image")]
     public $photo;
 
-    #[Validate("required")]
+    #[Validate("required|unique:projects")]
     public $title = '';
     #[Validate("required")]
     public $type = "Web Application";
-    #[Validate("required")]
+    #[Validate("required|min:3")]
     public $technologies = '';
 
     public function save()
     {
         $this->validate();
 
-        $path = $this->photo->store(path: "photos");
+        $path = $this->photo->store(path: "public/photos");
+        $file_name = basename($path);
         $project = [
             "title" => $this->title,
             "description" => $this->description,
             "live_demo" => $this->live_demo,
             "github_repo" => $this->github_repo,
-            "photo" => $path,
-            "technologies" => $this->getTechnologies(),
+            "photo" => $file_name,
+            "technologies" => $this->technologies,
             "type" => $this->type,
-            "user_id" => auth()->user()->id,
 
         ];
 
+        Project::create($project);
+        $this->redirect(route('home'), navigate: true);
 
     }
 
-    public function getTechnologies()
-    {
-        $technologies = preg_split('/[\s,;]+/', $this->technologies);
-        return $technologies;
+    // public function getTechnologies()
+    // {
+    //     $technologies = preg_split('/[\s,;]+/', $this->technologies);
+    //     return $technologies;
 
-    }
+    // }
 
     public function render()
     {

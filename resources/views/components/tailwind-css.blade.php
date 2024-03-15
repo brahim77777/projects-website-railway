@@ -312,6 +312,9 @@
             </div>
 
             <!-- FAQ -->
+
+
+            <x-projects_section :projects="$projects" />
             <!-- <div class="bg-warm-gray-50">
         <div class="mx-auto max-w-md py-24 px-4 sm:max-w-3xl sm:py-32 sm:px-6 lg:max-w-7xl lg:px-8">
           <div class="lg:grid lg:grid-cols-3 lg:gap-8">

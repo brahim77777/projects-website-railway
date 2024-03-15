@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/", function () {
-    return view("home");
+
+    return view("home", ['projects' => \App\Models\Project::all()]);
 })->name("home");
 
 
@@ -23,3 +24,4 @@ Route::get("/create", function () {
 })
     ->name('create_project')
     ->middleware("auth");
+
