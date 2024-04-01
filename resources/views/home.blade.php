@@ -3,6 +3,10 @@
     <x-tailwind-css :projects="$projects" />
 @endsection
 
+
+@section('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/css/flag-icon.min.css">
+@endsection
 @section('scripts')
     <script>
         function gotoProject(link1 = '', link2 = '') {

@@ -55,7 +55,13 @@
                         <a href="#"
                             x-on:click="document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth', block:'start'  });setTimeout( () => document.getElementById('email-address').focus(), 100) "
                             class="text-base font-medium text-white hover:text-cyan-100">{{ __('News Letter') }}</a>
-                        <x-with_icons />
+                        <div>
+                            <div>
+                                <a href="#" class="flag-icon flag-icon-sa mx-1"></a>
+                                <a href="#" class="flag-icon flag-icon-us mx-1"></a>
+
+                            </div>
+                        </div>
 
 
                     </div>
@@ -124,7 +130,7 @@
                                 <a href="{{ route('create_project') }}" wire:navigate
                                     class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Create Project') }}</a>
 
-                                <a href="{{ route('send_email') }}" wire:navigate
+                                <a href="{{ route('send_email') }}"
                                     class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Mail') }}</a>
 
 
@@ -137,8 +143,12 @@
                                 <a href="#"
                                     x-on:click="document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth', block:'start'  });setTimeout( () => document.getElementById('email-address').focus(), 100) "
                                     class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('NewsLetter') }}</a>
-
-                                <x-with_icons_responsive />
+                                <div
+                                    class="flex gap-2 rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50 ">
+                                    <span>{{ __('Language') }} </span>
+                                    <a class="flag-icon flag-icon-us mx-1" href="#"></a>
+                                    <a class=" flag-icon flag-icon-sa mx-1" href="#"></a>
+                                </div>
 
                             </div>
                             <div class="mt-6 px-5">
