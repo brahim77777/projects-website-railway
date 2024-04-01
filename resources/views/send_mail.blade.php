@@ -5,18 +5,15 @@
     <livewire:send-mail />
 @endsection
 
-
+@section('styles')
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.4/dist/quill.snow.css" rel="stylesheet" />
+@endsection
 
 @section('scripts')
-    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.4/dist/quill.js"></script>
     <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .then(editor => {
-                window.editor = editor;
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        const quill = new Quill('#editor', {
+            theme: 'snow'
+        });
     </script>
 @endsection

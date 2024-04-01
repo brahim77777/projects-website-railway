@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
 
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    @yield('styles')
     @vite('resources/css/app.css')
     <script defer src="https://unpkg.com/@alpinejs/ui@3.13.2-beta.0/dist/cdn.min.js"></script>
 
