@@ -13,6 +13,7 @@ class SendMail extends Component
     {
         $limit = 25;
         \App\Jobs\LaunchEmailJob::dispatch($limit, $html);
+
     }
     public function render()
     {
