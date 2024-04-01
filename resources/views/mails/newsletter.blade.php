@@ -7,9 +7,15 @@
 </head>
 
 <body>
+    <header>
+        <h1 style="font-weight: bold;background-color:rgba(128, 128, 128, 0.845);color:black;padding: 4px 12px;">
+            {{ __('Newsletter') }}
+        </h1>
+    </header>
+    <div style="padding:48px ; background-color: rgb(187, 106, 106)">
 
-    {!! $mailBody !!}
-
+        {!! $mailBody !!}
+        <div>
 
 </body>
 

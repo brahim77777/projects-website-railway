@@ -6,7 +6,8 @@
     </div>
 
 
-    <button class="btn btn-primary absolute top-56 right-4 bg-green-300 border rounded-2xl px-3 py-2" wire:click=""
-        id="send_email_button"
+    <button
+        class="hover:shadow-2xl hover:bg-green-400 transition-all   hover:text-white btn btn-primary absolute top-56 right-4 bg-green-300 border rounded-2xl px-3 py-2"
+        wire:click="" id="send_email_button"
         x-on:click="@this.sendMail( quill.container.firstChild.innerHTML )">{{ __('Send') }}</button>
 </div>
