@@ -28,5 +28,5 @@ Route::get("/create", function () {
 Route::get("/mail", function () {
     return view("send_mail");
 })
-    ->name("send_mail")
+    ->name("send_email")
     ->middleware("auth");

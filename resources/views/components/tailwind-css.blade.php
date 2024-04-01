@@ -45,6 +45,8 @@
                         @auth
                             <a wire:navigate href="{{ route('create_project') }}"
                                 class="text-base font-medium text-white hover:text-cyan-100">{{ __('Create Project') }}</a>
+                            <a wire:navigate href="{{ route('send_email') }}"
+                                class="text-base font-medium text-white hover:text-cyan-100">{{ __('Mail') }}</a>
                         @endauth
                         <a href="#" class="text-base font-medium text-white hover:text-cyan-100">About</a>
 
@@ -121,6 +123,10 @@
 
                                 <a href="{{ route('create_project') }}" wire:navigate
                                     class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Create Project') }}</a>
+
+                                <a href="{{ route('send_email') }}" wire:navigate
+                                    class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Mail') }}</a>
+
 
                                 <a href="#"
                                     class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">About</a>
