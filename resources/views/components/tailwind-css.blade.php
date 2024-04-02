@@ -57,8 +57,8 @@
                             class="text-base font-medium text-white hover:text-cyan-100">{{ __('News Letter') }}</a>
                         <div>
                             <div>
-                                <a href="#" class="flag-icon flag-icon-sa mx-1"></a>
-                                <a href="#" class="flag-icon flag-icon-us mx-1"></a>
+                                <a href="/ar" class="flag-icon flag-icon-sa mx-1"></a>
+                                <a href="/en" class="flag-icon flag-icon-us mx-1"></a>
 
                             </div>
                         </div>
@@ -146,8 +146,8 @@
                                 <div
                                     class="flex gap-2 rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50 ">
                                     <span>{{ __('Language') }} </span>
-                                    <a class="flag-icon flag-icon-us mx-1" href="#"></a>
-                                    <a class=" flag-icon flag-icon-sa mx-1" href="#"></a>
+                                    <a class="flag-icon flag-icon-us mx-1" href="en"></a>
+                                    <a class=" flag-icon flag-icon-sa mx-1" href="ar"></a>
                                 </div>
 
                             </div>

@@ -20,7 +20,6 @@
 
 
 
-
     @yield('scripts')
 
 </body>
