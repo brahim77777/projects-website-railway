@@ -13,6 +13,7 @@ class SendMail extends Component
     {
         $limit = 25;
         \App\Jobs\LaunchEmailJob::dispatch($limit, $html);
+        return redirect()->route('home')->with('mail_status', __("Mails are being sent ..."));
 
     }
     public function render()

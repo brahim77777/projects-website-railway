@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Events\JobEnded;
 use App\Models\Subscriber;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
@@ -34,4 +35,6 @@ class LaunchEmailJob implements ShouldQueue
             SendEmails::dispatch($this->mailBody, $userGroup);
         }
     }
+
+
 }

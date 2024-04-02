@@ -24,4 +24,5 @@
             wire:click="" id="send_email_button"
             x-on:click="@this.sendMail( quill.container.firstChild.innerHTML )">{{ __('Send') }}</button>
     </div>
+
 </div>
