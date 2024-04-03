@@ -15,17 +15,21 @@ class AddProject extends Component
     public $live_demo;
 
     public $github_repo = '';
-    #[Validate("required")]
+    #[Validate("required", message: "The description field is required")]
     public $description = '';
 
-    #[Validate("image")]
+    #[Validate("image", message: "The image field is required")]
     public $photo;
 
-    #[Validate("required|unique:projects")]
+    #[Validate("required|unique:projects", message: ['required' => 'The title field is required', 'unique' => 'The title has already been taken'])]
     public $title = '';
-    #[Validate("required")]
+
+
+    #[Validate("required", message: "The type field is required")]
     public $type = "Web Application";
-    #[Validate("required|min:3")]
+
+
+    #[Validate("required", message: "The technologies field is required")]
     public $technologies = '';
 
     public function save()

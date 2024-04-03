@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    {{ app()->getLocale() == 'ar' ? __('Arabic') : __('English') }}
 
     @yield('content')
 

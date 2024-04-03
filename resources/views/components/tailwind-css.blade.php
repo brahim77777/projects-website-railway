@@ -5,7 +5,7 @@
   possible interactivity
 -->
 <div>
-    <div class="bg-white">
+    <div class="bg-white ">
         <header class="relative bg-sky-800 pb-24 sm:pb-32">
             <div class="absolute inset-0">
                 <img class="h-full w-full object-cover"
@@ -25,7 +25,7 @@
                                 src="https://tailwindui.com/img/logos/mark.svg?color=emerald&amp;shade=300"
                                 alt="">
                         </a>
-                        <div class="-mr-2 flex items-center lg:hidden">
+                        <div class="ltr:-mr-2 rtl:-ml-2 flex items-center lg:hidden">
                             <button type="button"
                                 class="focus-ring-inset inline-flex items-center justify-center rounded-md bg-sky-800 bg-opacity-0 p-2 text-cyan-100 hover:bg-opacity-100 focus:outline-none focus:ring-2 focus:ring-white"
                                 x-on:click="open = !open" @click="toggle" @mousedown="if (open) $event.preventDefault()"
@@ -40,7 +40,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="hidden space-x-10 lg:ml-10 lg:flex">
+                    <div class="hidden space-x-10 ltr:lg:ml-10 rtl:lg:mr-10  lg:flex rtl:lg:flex-row-reverse">
 
                         @auth
                             <a wire:navigate href="{{ route('create_project') }}"
@@ -57,8 +57,8 @@
                             class="text-base font-medium text-white hover:text-cyan-100">{{ __('News Letter') }}</a>
                         <div>
                             <div>
-                                <a href="/ar" class="flag-icon flag-icon-sa mx-1"></a>
-                                <a href="/en" class="flag-icon flag-icon-us mx-1"></a>
+                                <a href="?lang=ar" class="flag-icon flag-icon-sa mx-1"></a>
+                                <a href="?lang=en" class="flag-icon flag-icon-us mx-1"></a>
 
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                             <x-dialog.open>
                                 <div class="hidden lg:flex lg:items-center lg:space-x-6">
                                     <a href="#"
-                                        class="rounded-md border border-transparent bg-white bg-opacity-10 py-2 px-6 text-base font-medium text-white hover:bg-opacity-20">{{ __('Login') }}</a>
+                                        class="rounded-md border border-transparent bg-white bg-opacity-10 py-2 px-6 text-base font-medium text-white hover:bg-opacity-20">{{ __('Log in') }}</a>
 
                                 </div>
                             </x-dialog.open>
@@ -110,7 +110,7 @@
                                     src="https://tailwindui.com/img/logos/mark.svg?color=emerald&amp;shade=400"
                                     alt="">
                             </div>
-                            <div class="-mr-2">
+                            <div class="ltr:-mr-2 rtl:-ml-2">
                                 <button type="button"
                                     class="inline-flex items-center justify-center rounded-md bg-white p-2 text-warm-gray-400 hover:bg-warm-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
                                     x-on:click="open = !open" @click="toggle">
@@ -142,7 +142,7 @@
 
                                 <a href="#"
                                     x-on:click="document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth', block:'start'  });setTimeout( () => document.getElementById('email-address').focus(), 100) "
-                                    class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('NewsLetter') }}</a>
+                                    class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('News Letter') }}</a>
                                 <div
                                     class="flex gap-2 rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50 ">
                                     <span>{{ __('Language') }} </span>
@@ -210,7 +210,7 @@
                                 class="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0">
 
                                 <div>
-                                    <h3 class="text-lg font-medium text-warm-gray-900">Contact</h3>
+                                    <h3 class="text-lg font-medium text-warm-gray-900">{{ __('Contact') }}</h3>
                                     <dl class="mt-2 text-base text-warm-gray-500">
                                         <div>
                                             <dt class="sr-only">Email</dt>

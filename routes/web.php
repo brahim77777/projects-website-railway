@@ -31,5 +31,6 @@ Route::get("/mail", function () {
     ->name("send_email")
     ->middleware("auth");
 
-Route::get("/ar", [\App\Http\Controllers\SwitchLanguageController::class, 'toArabic']);
-Route::get("/en", [\App\Http\Controllers\SwitchLanguageController::class, 'toEnglish']);
+Route::get("/{lang}", function () {
+    return redirect(route('home'));
+})->middleware('lang');

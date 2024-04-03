@@ -11,13 +11,14 @@ class SwitchLanguageController extends Controller
     //
     public function toArabic()
     {
-        App::setLocale('ar');
+        app()->setLocale('ar');
+        return redirect(route('home'));
         // return redirect()->back();
     }
     public function toEnglish()
     {
-        App::setLocale('en');
-        return redirect()->back();
+        app()->setLocale('en');
+        return redirect(route('home'));
 
     }
 }

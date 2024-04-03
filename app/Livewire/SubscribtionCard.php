@@ -9,15 +9,12 @@ use Livewire\Component;
 
 class SubscribtionCard extends Component
 {
+    #[Validate("required|unique:subscribers", message: ['required' => 'The email field is required', 'unique' => 'The email is already subscribed'])]
+
     public $email;
     public $done = false;
 
-    public function rules()
-    {
-        return [
-            "email" => [Rule::unique("subscribers"), "required", "email"],
-        ];
-    }
+
 
     public function save()
     {
@@ -25,7 +22,7 @@ class SubscribtionCard extends Component
         $this->validate();
         Subscriber::create(["email" => $this->email]);
         $this->done = true;
-        session()->flash('email' , 'email created successfully');
+        session()->flash('email', 'email subscribed successfully');
     }
     public function remove()
     {

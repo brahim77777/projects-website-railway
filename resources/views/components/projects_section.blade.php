@@ -32,7 +32,7 @@
                     <div class=" mb-[20%]">
                         <hr class="mt-4">
 
-                        <h1 class="font-bold text-2xl  text-gray-800">{{ $project->title }} Title</h1>
+                        <h1 class="font-bold text-2xl  text-gray-800">{{ $project->title }}</h1>
                         <p class="text-sm mb-5">{{ $project->type }}</p>
                         <p class="text-gray-500">{{ $project->description }} Lorem, ipsum dolor sit amet consectetur
                             adipisicing elit. Explicabo quam aut corporis, repellat odit voluptatum porro nemo,
@@ -45,7 +45,7 @@
                         </p>
                     </div>
 
-                    <p class="bottom absolute bottom-0 right-0 text-green-400 ">
+                    <p class="bottom absolute bottom-0 ltr:right-0 rtl:left-0 text-green-400 ">
                         @if ($project->live_demo)
                             <a href="{{ $project->live_demo == '' ? '#' : $project->live_demo }}"
                                 {{ $project->live_demo == '' ? '' : "target = '_blank'" }}
