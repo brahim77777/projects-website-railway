@@ -184,7 +184,7 @@
             <hr>
         </span>
         <div class="flex  justify-end mt-3">
-            <button type="button"
+            <button type="button" wire:click="cancel"
                 class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">{{ __('Cancel') }}</button>
             <button type="submit"
                 class="ml-3 rtl:mr-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">{{ __('Save') }}</button>

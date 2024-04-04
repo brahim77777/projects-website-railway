@@ -53,6 +53,10 @@ class AddProject extends Component
         $this->redirect(route('home'), navigate: true);
 
     }
+    public function cancel()
+    {
+        $this->redirect(route('home'), navigate: true);
+    }
 
     // public function getTechnologies()
     // {

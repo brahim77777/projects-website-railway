@@ -127,12 +127,14 @@
                         </div>
                         <div class="pt-5 pb-6">
                             <div class="space-y-1 px-2">
+                                @auth
 
-                                <a href="{{ route('create_project') }}" wire:navigate
-                                    class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Create Project') }}</a>
+                                    <a href="{{ route('create_project') }}" wire:navigate
+                                        class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Create Project') }}</a>
 
-                                <a href="{{ route('send_email') }}"
-                                    class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Mail') }}</a>
+                                    <a href="{{ route('send_email') }}"
+                                        class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Mail') }}</a>
+                                @endauth
 
 
                                 <a href="#"
