@@ -5,7 +5,7 @@
   possible interactivity
 -->
 <div class="bg-warm-gray-50">
-    <div class="mx-auto max-w-md py-24 px-4 sm:max-w-3xl sm:py-32 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto max-w-md pt-24 pb-12 px-4 sm:max-w-3xl sm:py-32 sm:px-6 lg:max-w-7xl lg:px-8">
         <ul role="list"
             class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-2 xl:gap-x-8">
             <!-- Rest of the code remains the same -->

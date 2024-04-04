@@ -50,7 +50,8 @@
                         @endauth
                         <a href="#" class="text-base font-medium text-white hover:text-cyan-100">About</a>
 
-                        <a href="#" class="text-base font-medium text-white hover:text-cyan-100">Partners</a>
+                        <a href="#"
+                            class="text-base font-medium text-white hover:text-cyan-100">{{ __('Projects') }}</a>
 
                         <a href="#"
                             x-on:click="document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth', block:'start'  });setTimeout( () => document.getElementById('email-address').focus(), 100) "
@@ -138,7 +139,7 @@
                                     class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">About</a>
 
                                 <a href="#"
-                                    class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">Partners</a>
+                                    class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Projects') }}</a>
 
                                 <a href="#"
                                     x-on:click="document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth', block:'start'  });setTimeout( () => document.getElementById('email-address').focus(), 100) "
@@ -146,8 +147,8 @@
                                 <div
                                     class="flex gap-2 rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50 ">
                                     <span>{{ __('Language') }} </span>
-                                    <a class="flag-icon flag-icon-us mx-1" href="en"></a>
-                                    <a class=" flag-icon flag-icon-sa mx-1" href="ar"></a>
+                                    <a class="flag-icon flag-icon-us mx-1" href="?lang=en"></a>
+                                    <a class=" flag-icon flag-icon-sa mx-1" href="?lang=ar"></a>
                                 </div>
 
                             </div>
@@ -189,10 +190,10 @@
 
             <div class="relative mx-auto mt-24 max-w-md px-4 sm:mt-32 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
                 <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                    {{ __('Web Service SH') }}</h1>
+                    {{ __(env('WEBSITE_OWNER', 'COMPANY NAME')) }}</h1>
                 <p class="mt-6 max-w-3xl text-xl text-cyan-100">
-                    {{ __('We are here all the time  24/7 .') }}<br>
-                    {{ __('contact us and we will get you coverd in a blink of an eye') }}
+                    {{ __(env('WEBSITE_DESCRIPTION', 'COMPANY DESCRIPTION')) }}<br>
+                    {{ __(env('WEBSITE_SUB_DESCRIPTION', 'COMPANY SUB DESCRIPTION')) }}
                 </p>
             </div>
         </header>
@@ -214,7 +215,7 @@
                                     <dl class="mt-2 text-base text-warm-gray-500">
                                         <div>
                                             <dt class="sr-only">Email</dt>
-                                            <dd>bazi.brahim.777@gmail.com</dd>
+                                            <dd>{{ env('WEBSITE_CONTACT_EMAIL', 'COMPANY EMAIL') }}</dd>
                                         </div>
                                         <div class="mt-1">
                                             <dt class="sr-only">Phone number</dt>
@@ -267,59 +268,71 @@
 
                             </div>
                         </section>
-                        <section class="mt-16 pt-16 lg:grid lg:grid-cols-3 lg:gap-8"
-                            aria-labelledby="location-heading">
+                        @if (env('WEBSITE_LOCATION_SECTION', false))
+                            <section class="mt-16 pt-16 lg:grid lg:grid-cols-3 lg:gap-8"
+                                aria-labelledby="location-heading">
+                                <h2 id="location-heading"
+                                    class="text-2xl font-bold text-warm-gray-900 sm:text-3xl sm:tracking-tight">
+                                    Locations
+                                </h2>
+                                <div
+                                    class="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0">
+
+                                    <div>
+                                        <h3 class="text-lg font-medium text-warm-gray-900">Los Angeles</h3>
+                                        <div class="mt-2 space-y-1 text-base text-warm-gray-500">
+
+                                            <p>4556 Brendan Ferry</p>
+
+                                            <p>Los Angeles, CA 90210</p>
+
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="text-lg font-medium text-warm-gray-900">New York</h3>
+                                        <div class="mt-2 space-y-1 text-base text-warm-gray-500">
+
+                                            <p>886 Walter Streets</p>
+
+                                            <p>New York, NY 12345</p>
+
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="text-lg font-medium text-warm-gray-900">Toronto</h3>
+                                        <div class="mt-2 space-y-1 text-base text-warm-gray-500">
+
+                                            <p>7363 Cynthia Pass</p>
+
+                                            <p>Toronto, ON N3Y 4H8</p>
+
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="text-lg font-medium text-warm-gray-900">Chicago</h3>
+                                        <div class="mt-2 space-y-1 text-base text-warm-gray-500">
+
+                                            <p>726 Mavis Island</p>
+
+                                            <p>Chicago, IL 60601</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+                        @endif
+                        <section class="mt-16  pt-16">
+
                             <h2 id="location-heading"
-                                class="text-2xl font-bold text-warm-gray-900 sm:text-3xl sm:tracking-tight">Locations
+                                class="text-2xl mb-16 pb-16 font-bold text-warm-gray-900 sm:text-3xl sm:tracking-tight">
+                                {{ __('Projects') }}
                             </h2>
-                            <div
-                                class="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0">
 
-                                <div>
-                                    <h3 class="text-lg font-medium text-warm-gray-900">Los Angeles</h3>
-                                    <div class="mt-2 space-y-1 text-base text-warm-gray-500">
-
-                                        <p>4556 Brendan Ferry</p>
-
-                                        <p>Los Angeles, CA 90210</p>
-
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h3 class="text-lg font-medium text-warm-gray-900">New York</h3>
-                                    <div class="mt-2 space-y-1 text-base text-warm-gray-500">
-
-                                        <p>886 Walter Streets</p>
-
-                                        <p>New York, NY 12345</p>
-
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h3 class="text-lg font-medium text-warm-gray-900">Toronto</h3>
-                                    <div class="mt-2 space-y-1 text-base text-warm-gray-500">
-
-                                        <p>7363 Cynthia Pass</p>
-
-                                        <p>Toronto, ON N3Y 4H8</p>
-
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h3 class="text-lg font-medium text-warm-gray-900">Chicago</h3>
-                                    <div class="mt-2 space-y-1 text-base text-warm-gray-500">
-
-                                        <p>726 Mavis Island</p>
-
-                                        <p>Chicago, IL 60601</p>
-
-                                    </div>
-                                </div>
-
-                            </div>
+                            <x-projects_section_v2 :projects="$projects" />
                         </section>
                     </div>
                     <div id="newsletter" class="sr-only">
@@ -330,7 +343,7 @@
             <!-- FAQ -->
 
 
-            <x-projects_section :projects="$projects" />
+
             <!-- <div class="bg-warm-gray-50">
         <div class="mx-auto max-w-md py-24 px-4 sm:max-w-3xl sm:py-32 sm:px-6 lg:max-w-7xl lg:px-8">
           <div class="lg:grid lg:grid-cols-3 lg:gap-8">
@@ -373,7 +386,6 @@
             <livewire:subscribtion-card />
 
         </main>
-
         <footer class="bg-white" aria-labelledby="footer-heading">
             <h2 id="footer-heading" class="sr-only">Footer</h2>
             <div class="mx-auto max-w-md py-12 px-4 sm:max-w-3xl sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -382,11 +394,13 @@
                         <img class="h-10"
                             src="https://tailwindui.com/img/logos/mark.svg?color=emerald&amp;shade=400"
                             alt="Company name">
-                        <p class="text-base text-warm-gray-500">Making the world a better place through constructing
+                        <p class="text-base text-warm-gray-500">Making the world a better place through
+                            constructing
                             elegant hierarchies.</p>
                         <div class="flex space-x-6">
 
-                            <a href="#" class="text-warm-gray-400 hover:text-warm-gray-500">
+                            <a href="{{ env('FACEBOOK_URL', '#') }}"
+                                class="text-warm-gray-400 hover:text-warm-gray-500 rtl:ml-6 ">
                                 <span class="sr-only">Facebook</span>
                                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path fill-rule="evenodd"
@@ -395,7 +409,8 @@
                                 </svg>
                             </a>
 
-                            <a href="#" class="text-warm-gray-400 hover:text-warm-gray-500">
+                            <a href="{{ env('INSTAGRAM_URL', '#') }}}"
+                                class="text-warm-gray-400 hover:text-warm-gray-500">
                                 <span class="sr-only">Instagram</span>
                                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path fill-rule="evenodd"
@@ -404,16 +419,19 @@
                                 </svg>
                             </a>
 
-                            <a href="#" class="text-warm-gray-400 hover:text-warm-gray-500">
+                            <a href="{{ env('TWITTER_URL', '#') }}"
+                                class="text-warm-gray-400 hover:text-warm-gray-500">
                                 <span class="sr-only">Twitter</span>
                                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path
                                         d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
                                     </path>
                                 </svg>
+
                             </a>
 
-                            <a href="#" class="text-warm-gray-400 hover:text-warm-gray-500">
+                            <a href="{{ env('GITHUB_URL', '#') }}"
+                                class="text-warm-gray-400 hover:text-warm-gray-500">
                                 <span class="sr-only">GitHub</span>
                                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path fill-rule="evenodd"
@@ -422,134 +440,131 @@
                                 </svg>
                             </a>
 
-                            <a href="#" class="text-warm-gray-400 hover:text-warm-gray-500">
-                                <span class="sr-only">Dribbble</span>
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </a>
+
 
                         </div>
                     </div>
-                    <div class="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                        <div class="md:grid md:grid-cols-2 md:gap-8">
-                            <div>
-                                <h3 class="text-base font-medium text-warm-gray-700">Solutions</h3>
-                                <ul role="list" class="mt-4 space-y-4">
+                    @if (env('WEBSITE_ADVANCED_FOOTER', false))
+                        <div class="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+                            <div class="md:grid md:grid-cols-2 md:gap-8">
+                                <div>
+                                    <h3 class="text-base font-medium text-warm-gray-700">Solutions</h3>
+                                    <ul role="list" class="mt-4 space-y-4">
 
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Marketing</a>
-                                    </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Marketing</a>
+                                        </li>
 
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Analytics</a>
-                                    </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Analytics</a>
+                                        </li>
 
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Commerce</a>
-                                    </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Commerce</a>
+                                        </li>
 
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Insights</a>
-                                    </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Insights</a>
+                                        </li>
 
-                                </ul>
+                                    </ul>
+                                </div>
+                                <div class="mt-12 md:mt-0">
+                                    <h3 class="text-base font-medium text-warm-gray-700">Support</h3>
+                                    <ul role="list" class="mt-4 space-y-4">
+
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Pricing</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Documentation</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Guides</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">API
+                                                Status</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="mt-12 md:mt-0">
-                                <h3 class="text-base font-medium text-warm-gray-700">Support</h3>
-                                <ul role="list" class="mt-4 space-y-4">
+                            <div class="md:grid md:grid-cols-2 md:gap-8">
+                                <div>
+                                    <h3 class="text-base font-medium text-warm-gray-700">Company</h3>
+                                    <ul role="list" class="mt-4 space-y-4">
 
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Pricing</a>
-                                    </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">About</a>
+                                        </li>
 
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Documentation</a>
-                                    </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Blog</a>
+                                        </li>
 
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Guides</a>
-                                    </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Jobs</a>
+                                        </li>
 
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">API
-                                            Status</a>
-                                    </li>
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Press</a>
+                                        </li>
 
-                                </ul>
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">{{ __('Projects') }}</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="mt-12 md:mt-0">
+                                    <h3 class="text-base font-medium text-warm-gray-700">Legal</h3>
+                                    <ul role="list" class="mt-4 space-y-4">
+
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Claim</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Privacy</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#"
+                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">Terms</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="md:grid md:grid-cols-2 md:gap-8">
-                            <div>
-                                <h3 class="text-base font-medium text-warm-gray-700">Company</h3>
-                                <ul role="list" class="mt-4 space-y-4">
-
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">About</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Blog</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Jobs</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Press</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Partners</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="mt-12 md:mt-0">
-                                <h3 class="text-base font-medium text-warm-gray-700">Legal</h3>
-                                <ul role="list" class="mt-4 space-y-4">
-
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Claim</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Privacy</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#"
-                                            class="text-base text-warm-gray-500 hover:text-warm-gray-900">Terms</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    @endif
                 </div>
                 <div class="mt-12 border-t border-warm-gray-200 pt-8">
-                    <p class="text-base text-warm-gray-400 xl:text-center">© 2020 Your Company, Inc. All rights
-                        reserved.</p>
+                    <p class="text-base text-warm-gray-400 text-center">
+                        {{ __('© 2024 ' . env('APP_NAME', 'YOUR COMPANY') . ', Inc. All rights reserved.') }}
+                    </p>
                 </div>
             </div>
         </footer>
+
     </div>
 </div>

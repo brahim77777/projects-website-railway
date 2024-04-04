@@ -3,7 +3,7 @@
     @if (session('mail_status'))
         <div style="background: #0e7490;" class=" border-l-4 border-green-500 text-teal-500  p-4" role="alert">
             <p class="font-bold">{{ __('Sending') }}</p>
-            <p class="text-white">{{ session('mail_status') }}</p>
+            <p class="text-white">{{ __(session('mail_status')) }}</p>
         </div>
     @endif
     <x-tailwind-css :projects="$projects" />

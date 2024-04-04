@@ -202,7 +202,7 @@
     "Get in touch" : "اتصل بنا",
     "Contact" : "تواصل معنا",
     "github": "مستودع المشروع",
-    "demo" : "مشاهدة المشروع",
+    "demo" : "معاينة المشروع",
     "The provided credentials do not match our records." : "البيانات التي أدخلتها لا تتطابق مع بياناتنا",
     "News Letter" : "النشرة البريدية",
     "Sign up for our newsletter": "سجل بالنشرة البريدية",
@@ -213,6 +213,20 @@
     "Error" : "خطأ",
     "The email is already subscribed": "البريد الالكتروني مسجل بالفعل",
     "Congratulations": "تهانينا",
-    "email subscribed successfully": "تم تسجيل بريدك الالكتروني بنجاح"
-
+    "email subscribed successfully": "تم تسجيل بريدك الالكتروني بنجاح",
+    "Projects": "المشاريع",
+    "visit": "زيارة",
+    "© 2024 Your Company, Inc. All rights reserved.": "© 2024 جميع الحقوق محفوظة.",
+    "Sending":"جار الارسال",
+    "Mails are being sent ...":"يتم إرسال البريد",
+    "back":"رجوع",
+    "Brahim Bazi":"ابراهيم بازي",
+    "full-stack developper and a hasoub graduate":"مطور برمجيات و خريج أكاديمية حسوب",
+    "Title":"العنوان",
+    "Live Demo":"رابط المعاينة",
+    "Github Repository": "مستودع المشروع",
+    "Description":"الوصف",
+    "Project Photo":"صورة المشروع",
+    "Describe the project.":"وصف المشروع.",
+    "Project Type":"نوع المشروع"
 }

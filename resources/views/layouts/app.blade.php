@@ -14,7 +14,6 @@
 </head>
 
 <body>
-    {{ app()->getLocale() == 'ar' ? __('Arabic') : __('English') }}
 
     @yield('content')
 

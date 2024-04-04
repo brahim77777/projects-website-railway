@@ -36,7 +36,7 @@
                     <div class="col-span-3 sm:col-span-2">
                         <label for="company-website"
                             class="block text-sm font-medium text-gray-700 ">{{ __('Live Demo') }}</label>
-                        <div class="mt-1 flex rounded-md shadow-sm ">
+                        <div dir="ltr" class="mt-1 flex rounded-md shadow-sm ">
                             <span
                                 class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-sm text-gray-500">http://</span>
                             <input wire:model="live_demo" type="text" name="company-website" id="company-website"
@@ -55,8 +55,8 @@
                     <div class="grid grid-cols-3 gap-6">
                         <div class="col-span-3 sm:col-span-2">
                             <label for="github_repo"
-                                class="block text-sm font-medium text-gray-700 ">{{ __('Github repository') }}</label>
-                            <div class="mt-1 flex rounded-md shadow-sm ">
+                                class="block text-sm font-medium text-gray-700 ">{{ __('Github Repository') }}</label>
+                            <div dir="ltr" class="mt-1 flex rounded-md shadow-sm ">
                                 <span
                                     class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-sm text-gray-500">http://</span>
                                 <input wire:model="github_repo" type="text" name="github_repo" id="github_repo"
@@ -76,9 +76,8 @@
                         <div class="mt-1">
                             <textarea wire:model="description" id="description" name="description" rows="3"
                                 class="border  p-1 px-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                placeholder="you@example.com"></textarea>
+                                placeholder="{{ __('Describe the project.') }}"></textarea>
                         </div>
-                        <p class="mt-2 text-sm text-gray-500">{{ __('Describe the project.') }}</p>
                         @if ($errors->has('description'))
                             <p class="text-red-500 text-xs italic">{{ $errors->first('description') }}</p>
                         @endif
@@ -99,7 +98,7 @@
                         </div>
                     @endif
 
-                    <label class="block text-sm font-medium text-gray-700">{{ __('Project photo') }}</label>
+                    <label class="block text-sm font-medium text-gray-700">{{ __('Project Photo') }}</label>
                     <div
                         class="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
                         <div class="space-y-1 text-center">
@@ -139,7 +138,7 @@
                                 {{-- Project Type --}}
                                 <div class="col-span-6">
                                     <label for="type"
-                                        class="block text-sm font-medium text-gray-700">{{ __('Project type') }}
+                                        class="block text-sm font-medium text-gray-700">{{ __('Project Type') }}
                                     </label>
                                     <select wire:model="type" id="type" name="type" autocomplete="project type"
                                         class=" mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm ">
@@ -186,9 +185,9 @@
         </span>
         <div class="flex  justify-end mt-3">
             <button type="button"
-                class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Cancel</button>
+                class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">{{ __('Cancel') }}</button>
             <button type="submit"
-                class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Save</button>
+                class="ml-3 rtl:mr-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">{{ __('Save') }}</button>
         </div>
     </div>
 
