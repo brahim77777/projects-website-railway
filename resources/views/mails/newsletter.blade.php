@@ -12,10 +12,9 @@
             {{ __('Newsletter') }}
         </h1>
     </header>
-    <div style="padding:48px ; background-color: rgb(187, 106, 106)">
-
+    <div>
         {!! $mailBody !!}
-        <div>
+    </div>
 
 </body>
 
