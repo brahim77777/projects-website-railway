@@ -142,10 +142,11 @@
                                     </label>
                                     <select wire:model="type" id="type" name="type" autocomplete="project type"
                                         class=" mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm ">
-                                        <option value="Web Application">Web Application</option>
-                                        <option value="Mobile Application">Mobile Application</option>
-                                        <option value="Data Science Application">Data Science Application</option>
-                                        <option value="Other">Other</option>
+                                        <option value="Web Application">{{ __('Web Application') }}</option>
+                                        <option value="Mobile Application">{{ __('Mobile Application') }}</option>
+                                        <option value="Data Science Application">{{ __('Data Science Application') }}
+                                        </option>
+                                        <option value="Other">{{ __('Other') }}</option>
 
                                     </select>
 
@@ -163,7 +164,7 @@
                                     </label>
                                     <textarea wire:model="technologies" type="text" name="technology" id="technology" autocomplete="technology"
                                         class="px-2 border p-1 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                        placeholder="write down the technologies used"></textarea>
+                                        placeholder="{{ __('write down the technologies used') }}"></textarea>
 
                                     @if ($errors->has('technologies'))
                                         <p class="text-red-500 text-xs italic">{{ $errors->first('technologies') }}

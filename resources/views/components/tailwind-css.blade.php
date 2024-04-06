@@ -48,7 +48,6 @@
                             <a href="{{ route('send_email') }}"
                                 class="text-base font-medium text-white hover:text-cyan-100">{{ __('Mail') }}</a>
                         @endauth
-                        <a href="#" class="text-base font-medium text-white hover:text-cyan-100">About</a>
 
                         <a href="#"
                             class="projects-nav-link text-base font-medium text-white hover:text-cyan-100">{{ __('Projects') }}</a>
@@ -135,9 +134,6 @@
                                         class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Mail') }}</a>
                                 @endauth
 
-
-                                <a href="#"
-                                    class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">About</a>
 
                                 <a href="#"
                                     class="projects-nav-link block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Projects') }}</a>
@@ -506,10 +502,7 @@
                                     <h3 class="text-base font-medium text-warm-gray-700">Company</h3>
                                     <ul role="list" class="mt-4 space-y-4">
 
-                                        <li>
-                                            <a href="#"
-                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">About</a>
-                                        </li>
+
 
                                         <li>
                                             <a href="#"
@@ -559,9 +552,8 @@
                     @endif
                 </div>
                 <div class="mt-12 border-t border-warm-gray-200 pt-8">
-                    <p class="text-base text-warm-gray-400 text-center">
-                        {{ __('© 2024 ' . env('APP_NAME', 'YOUR COMPANY') . ', Inc. All rights reserved.') }}
-                    </p>
+                    <p class="text-base text-warm-gray-400 text-center ">
+                        {{ __('© 2024 ' . env('APP_NAME', 'YOUR COMPANY') . ', Inc. All rights reserved.') }} </p>
                 </div>
             </div>
         </footer>

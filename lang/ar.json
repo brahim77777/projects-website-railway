@@ -228,6 +228,12 @@
     "Description":"الوصف",
     "Project Photo":"صورة المشروع",
     "Describe the project.":"وصف المشروع.",
-    "Project Type":"نوع المشروع"
-
+    "Project Type":"نوع المشروع",
+    "Technologies Used":"التقنيات المستخدمة",
+    "Web Application":"تطبيق الويب",
+    "Mobile Application":"تطبيق الهاتف",
+    "Desktop Application":"تطبيق البيت",
+    "Data Science Application":"تطبيق تحليل البيانات",
+    "Other":"غير ذلك",
+    "write down the technologies used":"اكتب التقنيات المستخدمة"
 }

@@ -7,7 +7,6 @@
         </div>
     @endif
     <x-tailwind-css :projects="$projects" />
-    <div id="idd">Hello</div>
 @endsection
 
 
@@ -22,5 +21,38 @@
             link1 == '' ? link = link2 : link = link1;
             link != '' ? window.open(link, '_blank') : null;
         }
+
+
+
+        document.querySelectorAll('.projects-nav-link').forEach((ele) => {
+            ele.addEventListener('click', function(event) {
+                event.preventDefault();
+                setTimeout(
+                    document.querySelector('#projects-heading').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start',
+                        inline: 'nearest'
+                    }), 500)
+
+            });
+        })
+
+
+        document.querySelectorAll('.newsletter-nav-link').forEach((ele) => {
+            ele.addEventListener('click', function(event) {
+                event.preventDefault();
+                setTimeout(() => {
+                    document.getElementById('email-address').focus()
+                }, 1000)
+
+                setTimeout(
+
+                    document.getElementById('newsletter').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start',
+                        inline: 'nearest'
+                    }), 2000)
+            });
+        })
     </script>
 @endsection
