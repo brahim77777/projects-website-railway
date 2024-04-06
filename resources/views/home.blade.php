@@ -7,6 +7,7 @@
         </div>
     @endif
     <x-tailwind-css :projects="$projects" />
+    <div id="idd">Hello</div>
 @endsection
 
 

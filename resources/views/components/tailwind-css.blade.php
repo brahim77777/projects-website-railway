@@ -51,11 +51,10 @@
                         <a href="#" class="text-base font-medium text-white hover:text-cyan-100">About</a>
 
                         <a href="#"
-                            class="text-base font-medium text-white hover:text-cyan-100">{{ __('Projects') }}</a>
+                            class="projects-nav-link text-base font-medium text-white hover:text-cyan-100">{{ __('Projects') }}</a>
 
                         <a href="#"
-                            x-on:click="document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth', block:'start'  });setTimeout( () => document.getElementById('email-address').focus(), 100) "
-                            class="text-base font-medium text-white hover:text-cyan-100">{{ __('News Letter') }}</a>
+                            class="newsletter-nav-link text-base font-medium text-white hover:text-cyan-100">{{ __('News Letter') }}</a>
                         <div>
                             <div>
                                 <a href="?lang=ar" class="flag-icon flag-icon-sa mx-1"></a>
@@ -141,11 +140,10 @@
                                     class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">About</a>
 
                                 <a href="#"
-                                    class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Projects') }}</a>
+                                    class="projects-nav-link block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('Projects') }}</a>
 
                                 <a href="#"
-                                    x-on:click="document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth', block:'start'  });setTimeout( () => document.getElementById('email-address').focus(), 100) "
-                                    class="block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('News Letter') }}</a>
+                                    class="newsletter-nav-link block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('News Letter') }}</a>
                                 <div
                                     class="flex gap-2 rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50 ">
                                     <span>{{ __('Language') }} </span>
@@ -329,7 +327,7 @@
                         @endif
                         <section class="mt-16  pt-16">
 
-                            <h2 id="location-heading"
+                            <h2 id="projects-heading"
                                 class="text-2xl mb-16 pb-16 font-bold text-warm-gray-900 sm:text-3xl sm:tracking-tight">
                                 {{ __('Projects') }}
                             </h2>
@@ -530,7 +528,7 @@
 
                                         <li>
                                             <a href="#"
-                                                class="text-base text-warm-gray-500 hover:text-warm-gray-900">{{ __('Projects') }}</a>
+                                                class=" text-base text-warm-gray-500 hover:text-warm-gray-900">{{ __('Projects') }}</a>
                                         </li>
 
                                     </ul>
