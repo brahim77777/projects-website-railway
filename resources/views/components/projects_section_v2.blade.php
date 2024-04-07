@@ -1,6 +1,7 @@
-<div class="flex flex-wrap pb-24 gap-2 justify-center">
+<div id="projects-section" class="flex flex-wrap pb-24 gap-4 justify-center ">
     @foreach ($projects as $project)
-        <div class="mb-10 max-w-sm hover:shadow-xl transition-all bg-white border border-gray-200 rounded-lg shadow  ">
+        <div
+            class="mb-10   max-w-sm hover:shadow-xl hover:translate-y-[-2px] transition-all bg-white border border-gray-200 rounded-lg shadow  ">
             <a href="#" class="">
                 <img class="rounded-t-lg" src="{{ asset("/storage/photos/$project->photo") }}" alt="" />
             </a>

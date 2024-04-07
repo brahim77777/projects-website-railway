@@ -321,10 +321,10 @@
                                 </div>
                             </section>
                         @endif
-                        <section class="mt-16  pt-16">
+                        <section class="mt-16 pt-16">
 
                             <h2 id="projects-heading"
-                                class="text-2xl mb-16 pb-16 font-bold text-warm-gray-900 sm:text-3xl sm:tracking-tight">
+                                class="text-2xl mb-16 font-bold text-warm-gray-900 sm:text-3xl sm:tracking-tight">
                                 {{ __('Projects') }}
                             </h2>
 
