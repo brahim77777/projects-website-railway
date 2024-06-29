@@ -69,6 +69,19 @@
                             <x-dialog.open>
                                 <div class="hidden lg:flex lg:items-center lg:space-x-6">
                                     <a href="#"
+                                        class=" py-2 px-6 text-base font-medium text-gray-500 ">{{ __('Sign Up') }}</a>
+
+                                </div>
+                            </x-dialog.open>
+
+                            <x-dialog.panel>
+                                <livewire:signup />
+                            </x-dialog.panel>
+                        </x-dialog>
+                        <x-dialog wire:model="show">
+                            <x-dialog.open>
+                                <div class="hidden lg:flex lg:items-center lg:space-x-6">
+                                    <a href="#"
                                         class="rounded-md border border-transparent bg-white bg-opacity-10 py-2 px-6 text-base font-medium text-white hover:bg-opacity-20">{{ __('Log in') }}</a>
 
                                 </div>
@@ -140,6 +153,8 @@
 
                                 <a href="#"
                                     class="newsletter-nav-link block rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50">{{ __('News Letter') }}</a>
+
+
                                 <div
                                     class="flex gap-2 rounded-md px-3 py-2 text-base font-medium text-warm-gray-900 hover:bg-warm-gray-50 ">
                                     <span>{{ __('Language') }} </span>
@@ -148,8 +163,21 @@
                                 </div>
 
                             </div>
-                            <div class="mt-6 px-5">
+                            <div class="mt-6 px-5 ">
+
                                 @if (!Auth::check())
+                                    <x-dialog wire:model="show">
+                                        <x-dialog.open>
+                                            <div class=" lg:flex lg:items-center lg:space-x-6">
+                                                <button type="button"
+                                                    class="block w-full  rounded-md border border-transparent bg-green-400 py-2 px-4 text-center font-medium text-white shadow hover:bg-green-500 mb-4">{{ __('Sign Up') }}</button>
+                                            </div>
+                                        </x-dialog.open>
+
+                                        <x-dialog.panel>
+                                            <livewire:signup />
+                                        </x-dialog.panel>
+                                    </x-dialog>
                                     <x-dialog wire:model="show">
                                         <x-dialog.open>
                                             <div class=" lg:flex lg:items-center lg:space-x-6">
