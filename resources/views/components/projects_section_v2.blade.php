@@ -2,7 +2,7 @@
     @foreach ($projects as $project)
         <div
             class="mb-10   max-w-sm hover:shadow-xl hover:translate-y-[-2px] transition-all bg-white border border-gray-200 rounded-lg shadow  ">
-            <a href="#" class="">
+            <a wire:navigate href="{{ route('project_details') }}" class="">
                 <img class="rounded-t-lg" src="{{ asset("/storage/photos/$project->photo") }}" alt="" />
             </a>
             <div class="p-5 ">

@@ -235,5 +235,17 @@
     "Desktop Application":"تطبيق البيت",
     "Data Science Application":"تطبيق تحليل البيانات",
     "Other":"غير ذلك",
-    "write down the technologies used":"اكتب التقنيات المستخدمة"
+    "write down the technologies used":"اكتب التقنيات المستخدمة",
+    "Sign Up": "انشاء حساب",
+    "Confirm Password" :"تاكيد كلمة المرور",
+    "Create a new account": "انشئ حسابك الخاص",
+    "Get in Touch":"اتصل بنا",
+    "We'd love to hear from you.":"يشرفنا التواصل معكم.",
+    "Send us a message" :"ارسل لنا رسالة",
+    "message":"رسالة",
+    "Name":"الاسم",
+    "Message":"رسالة",
+    "Send Message":"ارسال الرسالة"
+
+
 }

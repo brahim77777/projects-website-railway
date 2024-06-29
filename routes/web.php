@@ -1,6 +1,8 @@
 <?php
 
+use App\Livewire\ProjectDetails;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +16,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/", function () {
-
     return view("home", ['projects' => \App\Models\Project::all()]);
 })->name("home");
 
+Route::get("contact", function () {
+    return view("contact", ["home" => false]);
+})->name("contact");
+
+Route::get("/project_details", function () {
+    return view("project_details");
+})->name("project_details");
+
+Route::post("/contact_form", function (Request $request) {
+    dd($request->all());
+})->name("contact_form");
 
 Route::get("/create", function () {
     return view("create_project");
@@ -34,3 +46,5 @@ Route::get("/mail", function () {
 Route::get("/{lang}", function () {
     return redirect(route('home'));
 })->middleware('lang');
+
+
